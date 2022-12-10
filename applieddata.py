@@ -9,6 +9,7 @@ Created on Sat Dec  3 19:45:07 2022
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import stats
 import seaborn as sns
 
 
@@ -33,9 +34,20 @@ def get_data(name):
     countries=df.drop(['Country Code', 'Indicator Code'],axis=1)
     
     # Populate the data header information
-    print(countries.head)
+    print(np.array(countries.head))
     
     print(years.head)
+    
+    print(years.info())
+    
+    print(countries.info())
+    
+    print(df.info())
+    
+    
+    
+
+    print (countries.mean())
     
     # return year as column countries as column with transpose and original data
     return years.T,countries,df
